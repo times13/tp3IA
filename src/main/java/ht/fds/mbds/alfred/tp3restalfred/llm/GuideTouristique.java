@@ -6,6 +6,9 @@ public interface GuideTouristique {
 
     @SystemMessage("""
             Tu es un guide touristique.
+            
+            N'utilise pas Markdown.
+            Réponds uniquement avec du JSON.
 
             Donne les 2 principaux endroits à visiter
             dans le lieu demandé.

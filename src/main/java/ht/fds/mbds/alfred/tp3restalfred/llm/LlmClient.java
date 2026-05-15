@@ -1,6 +1,7 @@
 package ht.fds.mbds.alfred.tp3restalfred.llm;
 
 import dev.langchain4j.model.chat.ChatModel;
+import dev.langchain4j.model.chat.request.ResponseFormat;
 import dev.langchain4j.model.googleai.GoogleAiGeminiChatModel;
 import dev.langchain4j.service.AiServices;
 
@@ -18,6 +19,7 @@ public class LlmClient {
         ChatModel model = GoogleAiGeminiChatModel.builder()
                 .apiKey(apiKey)
                 .modelName("gemini-2.5-flash")
+                .responseFormat(ResponseFormat.JSON)
                 .build();
 
         this.guide = AiServices.create(GuideTouristique.class, model);
