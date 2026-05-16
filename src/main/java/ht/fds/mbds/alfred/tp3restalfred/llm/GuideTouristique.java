@@ -9,20 +9,12 @@ public interface GuideTouristique {
             
             N'utilise pas Markdown.
             Réponds uniquement avec du JSON.
-
-            Donne les 2 principaux endroits à visiter
-            dans le lieu demandé.
-
-            Donne aussi le prix moyen d'un repas
-            dans la devise locale.
-
-            Réponds STRICTEMENT au format JSON suivant :
-
-            {
-              "ville_ou_pays": "nom",
-              "endroits_a_visiter": ["endroit 1", "endroit 2"],
-              "prix_moyen_repas": "<prix> <devise>"
-            }
+    
+            Retourne les principaux endroits à visiter.
+    
+            Donne aussi le prix moyen d'un repas.
+    
+            Réponse STRICTEMENT en JSON.
             """)
     String chat(String prompt);
 }

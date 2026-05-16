@@ -25,8 +25,11 @@ public class LlmClient {
         this.guide = AiServices.create(GuideTouristique.class, model);
     }
 
-    public String demanderInfos(String lieu) {
+    public String demanderInfos(String lieu, int nb) {
 
-        return guide.chat(lieu);
+        return guide.chat(
+                "Lieu : " + lieu +
+                        ". Donne " + nb +
+                        " endroits à visiter.");
     }
 }

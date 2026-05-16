@@ -8,6 +8,8 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.DefaultValue;
+import jakarta.ws.rs.QueryParam;
 
 /**
  * Ressource REST guide touristique.
@@ -28,8 +30,9 @@ public class GuideTouristiqueResource {
     @Path("/lieu/{ville_ou_pays}")
     @Produces(MediaType.APPLICATION_JSON)
     public String endroitsDeVisite(
-            @PathParam("ville_ou_pays") String villeOuPays) {
+            @PathParam("ville_ou_pays") String villeOuPays,
+            @QueryParam("nb") @DefaultValue("2") int nb) {
 
-        return llmClient.demanderInfos(villeOuPays);
+        return llmClient.demanderInfos(villeOuPays, nb);
     }
 }
